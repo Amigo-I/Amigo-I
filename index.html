@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Screen Dimensions</title>
+    <title>Dynamic Screen Dimensions</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -24,6 +24,7 @@
         <p id="screenHeight"></p>
         <p id="windowWidth"></p>
         <p id="windowHeight"></p>
+        <p id="pixelRatio"></p>
     </div>
     <script>
         function updateDimensions() {
@@ -35,11 +36,15 @@
             const windowWidth = window.innerWidth;
             const windowHeight = window.innerHeight;
 
+            // Get device pixel ratio
+            const pixelRatio = window.devicePixelRatio;
+
             // Display the dimensions
             document.getElementById('screenWidth').textContent = `Screen Width: ${screenWidth}px`;
             document.getElementById('screenHeight').textContent = `Screen Height: ${screenHeight}px`;
             document.getElementById('windowWidth').textContent = `Window Width: ${windowWidth}px`;
             document.getElementById('windowHeight').textContent = `Window Height: ${windowHeight}px`;
+            document.getElementById('pixelRatio').textContent = `Device Pixel Ratio: ${pixelRatio}`;
         }
 
         // Initial call to display dimensions

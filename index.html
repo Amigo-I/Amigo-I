@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Screen Dimensions</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .dimensions {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="dimensions">
+        <p id="screenWidth"></p>
+        <p id="screenHeight"></p>
+        <p id="windowWidth"></p>
+        <p id="windowHeight"></p>
+    </div>
+    <script>
+        function updateDimensions() {
+            // Get screen dimensions
+            const screenWidth = screen.width;
+            const screenHeight = screen.height;
+
+            // Get window dimensions
+            const windowWidth = window.innerWidth;
+            const windowHeight = window.innerHeight;
+
+            // Display the dimensions
+            document.getElementById('screenWidth').textContent = `Screen Width: ${screenWidth}px`;
+            document.getElementById('screenHeight').textContent = `Screen Height: ${screenHeight}px`;
+            document.getElementById('windowWidth').textContent = `Window Width: ${windowWidth}px`;
+            document.getElementById('windowHeight').textContent = `Window Height: ${windowHeight}px`;
+        }
+
+        // Initial call to display dimensions
+        updateDimensions();
+
+        // Update dimensions on window resize
+        window.addEventListener('resize', updateDimensions);
+    </script>
+</body>
+</html>
